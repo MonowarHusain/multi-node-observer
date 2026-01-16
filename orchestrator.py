@@ -6,7 +6,7 @@ r = redis.Redis(host='localhost', port=6379, db=0)
 
 # List of target nodes to observe
 # You can add your home server or local IP here
-targets = ["google.com", "8.8.8.8", "github.com", "192.168.0.1"]
+targets = ["google.com", "8.8.8.8", "github.com", "192.168.0.1", "facebook.com", "bracu.ac.bd"]
 
 print("Multi-Node Orchestrator started. Sending pulses every 30 seconds...")
 
