@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  # Centralized message broker
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  # Scalable worker nodes
+  worker:
+    build: .
+    depends_on:
+      - redis
+    deploy:
+      # Scales the worker to 3 replicas to simulate a multi-node system
+      replicas: 3 
+    environment:
+      - REDIS_HOST=redis
